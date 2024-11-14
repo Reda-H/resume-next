@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { ThemeToggle } from "@/components/theme-toggle";
 
 const navItems = [
   { name: "About", href: "#about" },
@@ -24,17 +23,17 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 items-center justify-between">
-        <div className="flex items-center gap-6">
+      <div className="container flex h-14 items-center justify-between mx-auto">
+        <div className="flex items-center justify-between gap-6 w-full pl-6">
           <a className="flex items-center space-x-2" href="/">
-            <span className="font-bold">John Doe</span>
+            <span className="font-bold oswald-900">John Doe</span>
           </a>
-          <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
+          <nav className="hidden md:flex items-center text-sm font-medium">
             {navItems.map((item) => (
               <Button
                 key={item.href}
                 variant="ghost"
-                className="text-secondary hover:text-primary"
+                className="text-secondary hover:text-white oswald-900"
                 onClick={() => scrollToSection(item.href)}
               >
                 {item.name}
@@ -44,7 +43,6 @@ export function Header() {
         </div>
         
         <div className="flex items-center gap-2">
-          <ThemeToggle />
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="md:hidden">
               <Button
