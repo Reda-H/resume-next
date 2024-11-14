@@ -1,8 +1,14 @@
+'use client';
+
 import { Github, Linkedin, Mail } from "lucide-react";
 import mainImage from "@/assets/resume-picture-headshot2.jpg"
 import Image from "next/image";
+import useIsMobile from "@/hooks/useIsMobile";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
+
+  const isMobile = useIsMobile();
 
   const experience = [
     {
@@ -57,36 +63,81 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col gap-12 max-w-5xl mx-auto px-6 py-12">
-      <header className="w-full flex flex-row md:flex-col gap-12">
-        <div className="flex items-center gap-8 justify-start md:justify-center">
-          <div className="flex flex-col gap-2">
-            <h1 className="text-5xl font-bold mb-2 oswald-800 text-[120px]">Reda Herradi</h1>
-            <div className="flex flex-row gap-2">
-              <h2 className="text-xl text-muted-foreground oswald-800 text-[32px]">Senior Frontend Developer @ Nuitee</h2>
-              <div className="flex items-center flex-row justify-start gap-4 px-2">
-                <a href="mailto:herradi.reda@gmail.com" className="text-muted-foreground hover:text-foreground animate-bounce">
-                  <Mail className="w-6 h-6 text-primary hover:text-primary/60" />
+    <div className="flex flex-col gap-12 max-w-5xl mx-auto px-4 md:px-6 py-12">
+      <header id="header" className="w-full flex flex-row md:flex-col md:gap-12 scroll-mt-20">
+        <div className="flex flex-col md:flex-row items-center justify-start md:justify-center md:gap-8 w-full">
+          <div className={isMobile ? "flex flex-col gap-2 w-fit" : "flex flex-col gap-2"}>
+            {isMobile ?
+              <div className="flex flex-col w-fit">
+                <h1 className="text-5xl font-bold mb-2 oswald-800 text-[80px]">Reda</h1>
+                <h1 className="text-5xl font-bold mb-2 oswald-800 text-[80px]">Herradi</h1>
+              </div>
+              :
+              <h1 className="text-5xl font-bold mb-2 oswald-800 md:text-[120px]">Reda Herradi</h1>}
+            {
+              isMobile && (
+                <div className="relative aspect-square w-4/5 mx-auto">
+                  <Image
+                    src={mainImage}
+                    alt="Profile"
+                    className="rounded-full object-cover"
+                    unoptimized
+                    fill
+                    loading="lazy"
+                  />
+                </div>
+              )
+            }
+            <div className={isMobile ? "flex flex-col gap-2 justify-center text-center" : "flex flex-row gap-2"}>
+              <h2 className="text-lg md:text-xl text-muted-foreground oswald-800 text-[32px] w-fit">{experience[0].role} @ {experience[0].company.name}</h2>
+              <div className={isMobile ? "flex items-center flex-row justify-center gap-8 px-2" : "flex items-center flex-row justify-start gap-4 px-2"}>
+                <a href="mailto:herradi.reda@gmail.com" className={isMobile ? "text-muted-foreground hover:text-foreground w-16" : "text-muted-foreground hover:text-foreground animate-bounce"}>
+                  {
+                    isMobile ?
+                      <Button variant="default" size="icon" className="rounded-[8px] w-full">
+                        <Mail className="w-6 h-6 text-white" />
+                      </Button>
+                      :
+                      <Mail className="w-6 h-6 text-primary hover:text-primary/60" />
+                  }
                 </a >
-                <a href="https://github.com/Reda-H" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground animate-bounce">
-                  <Github className="w-6 h-6 text-primary hover:text-primary/60" />
+                <a href="https://github.com/Reda-H" target="_blank" rel="noopener noreferrer" className={isMobile ? "text-muted-foreground hover:text-foreground w-16" : "text-muted-foreground hover:text-foreground animate-bounce"}>
+                  {
+                    isMobile ?
+                      <Button variant="default" size="icon" className="rounded-[8px] w-full">
+                        <Github className="w-6 h-6 text-white" />
+                      </Button>
+                      :
+                      <Github className="w-6 h-6 text-primary hover:text-primary/60" />
+                  }
                 </a>
-                <a href="https://www.linkedin.com/in/reda-herradi/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground animate-bounce">
-                  <Linkedin className="w-6 h-6 text-primary hover:text-primary/60" />
+                <a href="https://www.linkedin.com/in/reda-herradi/" target="_blank" rel="noopener noreferrer" className={isMobile ? "text-muted-foreground hover:text-foreground w-16" : "text-muted-foreground hover:text-foreground animate-bounce"}>
+                  {
+                    isMobile ?
+                      <Button variant="default" size="icon" className="rounded-[8px] w-full">
+                        <Linkedin className="w-6 h-6 text-white" />
+                      </Button>
+                      :
+                      <Linkedin className="w-6 h-6 text-primary hover:text-primary/60" />
+                  }
                 </a>
+
               </div>
             </div>
           </div>
-          <div className="relative aspect-square min-w-[310px] w-[310px]">
-            <Image
-              src={mainImage}
-              alt="Profile"
-              className="rounded-full object-cover"
-              unoptimized
-              fill
-              loading="lazy"
-            />
-          </div>
+          {
+            !isMobile
+            && <div className="relative aspect-square min-w-[310px] w-[310px]">
+              <Image
+                src={mainImage}
+                alt="Profile"
+                className="rounded-full object-cover"
+                unoptimized
+                fill
+                loading="lazy"
+              />
+            </div>
+          }
         </div>
       </header>
 
@@ -96,7 +147,7 @@ export default function Home() {
             <div>
               <h3 className="text-lg font-semibold mb-4 kanit-800 text-black border-b border-black">Presentation</h3>
               <p className="text-muted-foreground kanit-300">
-                Senior Frontend Engineer with over 3 years of experience, specializing in VueJs, modern JavaScript, and SEO. Currently leading frontend development initiatives and mentoring junior developers. Proven track record of driving adoption of best practices and delivering high-quality web applications. Demonstrates consistent growth through continuous learning and problem-solving. Seeking opportunities to leverage technical expertise and leadership skills in an innovative environment.
+                Senior Frontend Engineer with 4 years of experience, specializing in VueJs, modern JavaScript, and SEO. Currently leading frontend development initiatives and mentoring junior developers. Proven track record of driving adoption of best practices and delivering high-quality web applications. Demonstrates consistent growth through continuous learning and problem-solving. Seeking opportunities to leverage technical expertise and leadership skills in an innovative environment.
               </p>
             </div>
           </div>
@@ -108,8 +159,24 @@ export default function Home() {
             {experience.map((item) => (
               <div className="pb-2 border-b border-gray-300">
                 <div className="flex justify-between mb-2 hover-animation">
-                  <h4 className="font-medium text-lg kanit-600 text-black">{item.role} @ <a href={item.company.url} className="text-primary">{item.company.name}</a></h4>
-                  <span className="text-black kanit-300">{item.startDate} - {item.endDate}</span>
+                  {
+                    isMobile ?
+                      <div className="flex flex-col">
+                        <h4 className="font-medium text-lg kanit-600 text-black">{item.role}</h4>
+                        <a href={item.company.url} className="text-primary kanit-600">{item.company.name}</a>
+                      </div>
+                      :
+                      <h4 className="font-medium text-lg kanit-600 text-black">{item.role} @ <a href={item.company.url} className="text-primary">{item.company.name}</a></h4>
+                  }
+                  {
+                    isMobile ?
+                      <div className="flex flex-col divide-y-[1px]">
+                        <span className="text-black kanit-300">{item.startDate}</span>
+                        <span className="text-black kanit-300">{item.endDate}</span>
+                      </div>
+                      :
+                      <span className="text-black kanit-300">{item.startDate} - {item.endDate}</span>
+                  }
                 </div>
                 <ul className="responsibilities text-muted-foreground space-y-2">
                   {item.responsibilities.map((responsibility) => (
@@ -124,7 +191,7 @@ export default function Home() {
         <section id="education" className="scroll-mt-20">
           <h3 className="text-lg font-semibold mb-4 kanit-800 text-black border-b border-black">Education</h3>
           <div className="pb-6 flex flex-row gap-2">
-            <h4 className="font-medium kanit-600 text-black">Bachelor of Computer Science @ </h4>
+            {isMobile ? <h4 className="font-medium kanit-600 text-black">Bachelor of Computer Science</h4> : <h4 className="font-medium kanit-600 text-black">Bachelor of Computer Science @ </h4>}
             <a href="https://aui.ma/" target="_blank" rel="noopener noreferrer" className="text-primary kanit-400">Al Akhawayn University in Ifrane</a>
           </div>
         </section>

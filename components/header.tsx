@@ -19,6 +19,9 @@ export function Header() {
     setIsOpen(false);
     const element = document.querySelector(href);
     element?.scrollIntoView({ behavior: "smooth" });
+    if(href === "#header") {
+      return;
+    }
 
     setTimeout(() => {
       element?.classList.add("pulsating-border-smooth");
@@ -33,7 +36,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center justify-between mx-auto">
         <div className="flex items-center justify-between gap-6 w-full pl-6">
-          <a className="flex items-center space-x-2" href="/">
+          <a className="flex items-center space-x-2" onClick={() => scrollToSection("#header")}>
             <span className="font-bold oswald-900">Reda Herradi</span>
           </a>
           <nav className="hidden md:flex items-center text-sm font-medium">
@@ -50,7 +53,7 @@ export function Header() {
           </nav>
         </div>
         
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 pr-6">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="md:hidden">
               <Button
