@@ -19,6 +19,14 @@ export function Header() {
     setIsOpen(false);
     const element = document.querySelector(href);
     element?.scrollIntoView({ behavior: "smooth" });
+
+    setTimeout(() => {
+      element?.classList.add("pulsating-border-smooth");
+    }, 200);
+
+    setTimeout(() => {
+      element?.classList.remove("pulsating-border-smooth");
+    }, 1200);
   };
 
   return (
