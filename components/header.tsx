@@ -26,7 +26,7 @@ export function Header() {
       <div className="container flex h-14 items-center justify-between mx-auto">
         <div className="flex items-center justify-between gap-6 w-full pl-6">
           <a className="flex items-center space-x-2" href="/">
-            <span className="font-bold oswald-900">John Doe</span>
+            <span className="font-bold oswald-900">Reda Herradi</span>
           </a>
           <nav className="hidden md:flex items-center text-sm font-medium">
             {navItems.map((item) => (

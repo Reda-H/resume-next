@@ -18,7 +18,7 @@ export function Presentation() {
               </div>
             </div>
             <div className="flex flex-col justify-center space-y-4">
-              <h1 className="text-4xl font-bold text-foreground">John Doe</h1>
+              <h1 className="text-4xl font-bold text-foreground">Reda Herradi</h1>
               <h2 className="text-2xl font-semibold text-foreground/80">Senior Software Engineer</h2>
               <p className="text-muted-foreground">
                 Passionate software engineer with over 8 years of experience in full-stack development.

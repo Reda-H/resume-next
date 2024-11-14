@@ -1,38 +1,49 @@
+import { Github, Linkedin, Mail } from "lucide-react";
+import mainImage from "@/assets/resume-picture-headshot2.jpg"
+import Image from "next/image";
+
 export default function Home() {
   return (
     <div className="max-w-5xl mx-auto px-6 py-12">
-      <header className="flex justify-between items-center mb-12">
-        <div>
-          <h1 className="text-5xl font-bold mb-2">John Doe</h1>
-          <h2 className="text-xl text-muted-foreground">Senior Frontend Developer @ TechCorp</h2>
+      <header className="w-full flex flex-row md:flex-col gap-12">
+        <div className="flex items-center gap-8 justify-start md:justify-center">
+          <div className="flex flex-col gap-2">
+            <h1 className="text-5xl font-bold mb-2 oswald-800 text-[120px]">Reda Herradi</h1>
+            <div className="flex flex-row gap-2">
+              <h2 className="text-xl text-muted-foreground oswald-800 text-[32px]">Senior Frontend Developer @ Nuitee</h2>
+              <div className="flex items-center flex-row justify-start gap-4 px-2">
+                <a href="mailto:herradi.reda@gmail.com" className="text-muted-foreground hover:text-foreground animate-bounce">
+                  <Mail className="w-6 h-6 text-primary hover:text-primary/60" />
+                </a >
+                <a href="https://github.com/redaherradi" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground animate-bounce">
+                  <Github className="w-6 h-6 text-primary hover:text-primary/60" />
+                </a>
+                <a href="https://linkedin.com/in/redaherradi" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground animate-bounce">
+                  <Linkedin className="w-6 h-6 text-primary hover:text-primary/60" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="relative aspect-square min-w-[310px] w-[310px]">
+            <Image
+              src={mainImage}
+              alt="Profile"
+              className="rounded-full object-cover"
+              fill
+              priority
+            />
+          </div>
         </div>
-        <nav className="hidden md:flex space-x-6">
-          <a href="#about" className="hover:text-foreground/80">About Me</a>
-          <a href="#experience" className="hover:text-foreground/80">Experience</a>
-          <a href="#education" className="hover:text-foreground/80">Education</a>
-          <a href="#contact" className="hover:text-foreground/80">Contact Me</a>
-        </nav>
       </header>
 
       <main>
-        <section id="about" className="mb-12">
+        <section id="about" className="mb-12 scroll-mt-20">
           <div className="grid md:grid-cols-[2fr,1fr] gap-12 items-center">
             <div>
-              <h3 className="text-lg font-semibold mb-4">Presentation</h3>
+              <h3 className="text-lg font-semibold mb-4 kanit-800 text-black">Presentation</h3>
               <p className="text-muted-foreground">
-                Senior Frontend Developer with over 5 years of experience specializing in React,
-                modern JavaScript, and SEO. Currently leading frontend development initiatives
-                and mentoring junior developers. Proven track record of driving adoption of
-                best practices and delivering high-quality web applications. Demonstrates
-                consistent growth through continuous learning and problem-solving.
+                Senior Frontend Engineer with over 3 years of experience, specializing in VueJs, modern JavaScript, and SEO. Currently leading frontend development initiatives and mentoring junior developers. Proven track record of driving adoption of best practices and delivering high-quality web applications. Demonstrates consistent growth through continuous learning and problem-solving. Seeking opportunities to leverage technical expertise and leadership skills in an innovative environment.
               </p>
-            </div>
-            <div className="relative aspect-square">
-              <img
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=400&q=80"
-                alt="Profile"
-                className="rounded-full object-cover"
-              />
             </div>
           </div>
         </section>
@@ -51,7 +62,7 @@ export default function Home() {
                 <li>Established best practices, elevating code quality and architecture</li>
               </ul>
             </div>
-            
+
             <div className="border-b pb-6">
               <div className="flex justify-between mb-2">
                 <h4 className="font-medium">Frontend Developer @ StartupCo</h4>
