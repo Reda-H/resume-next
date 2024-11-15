@@ -6,6 +6,18 @@ import { Header } from '@/components/header';
 
 const inter = Inter({ subsets: ['latin'] });
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Reda Herradi",
+  "jobTitle": "Senior Frontend Engineer",
+  "url": "https://herradi.com",
+  "sameAs": [
+    "https://github.com/Reda-H",
+    "https://www.linkedin.com/in/reda-herradi/"
+  ]
+}
+
 export const metadata: Metadata = {
   title: 'Reda Herradi - Resume',
   description: 'Reda Herradi\'s professional resume as a Senior Frontend Engineer',
@@ -28,6 +40,19 @@ export const metadata: Metadata = {
       },
     ],
   },
+  keywords: "Reda Herradi, Frontend Engineer, Senior Developer, Vue.js, JavaScript, TypeScript, Web Development",
+  robots: "index, follow",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "herradi.com",
+    title: "Reda Herradi - Senior Frontend Engineer",
+    description: "Professional portfolio and resume of Reda Herradi, a Senior Frontend Engineer specializing in Vue.js and modern web development",
+  },
+  twitter: {
+    title: "Reda Herradi - Senior Frontend Engineer",
+    description: "Professional portfolio and resume of Reda Herradi",
+  }
 };
 
 export default function RootLayout({
@@ -37,6 +62,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={inter.className}>
         <Header />
         {children}
