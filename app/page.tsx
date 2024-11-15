@@ -157,26 +157,18 @@ export default function Home() {
           <h3 className="kanit-800 text-black text-lg font-semibold mb-6 border-b border-black">Experience</h3>
           <div className="space-y-8">
             {experience.map((item) => (
-              <div className="pb-2 border-b border-gray-300">
-                <div className="flex justify-between mb-2 hover-animation">
+              <div key={item.company.name} className="pb-2 border-b border-gray-300">
+                <div className="flex justify-between mb-2 hover-animation md:flex-row flex-col">
                   {
                     isMobile ?
                       <div className="flex flex-col">
                         <h4 className="font-medium text-lg kanit-600 text-black">{item.role}</h4>
-                        <a href={item.company.url} className="text-primary kanit-600">{item.company.name}</a>
+                        <a href={item.company.url} className="text-primary kanit-600 text-lg">@ {item.company.name}</a>
                       </div>
                       :
                       <h4 className="font-medium text-lg kanit-600 text-black">{item.role} @ <a href={item.company.url} className="text-primary">{item.company.name}</a></h4>
                   }
-                  {
-                    isMobile ?
-                      <div className="flex flex-col divide-y-[1px]">
-                        <span className="text-black kanit-300">{item.startDate}</span>
-                        <span className="text-black kanit-300">{item.endDate}</span>
-                      </div>
-                      :
-                      <span className="text-black kanit-300">{item.startDate} - {item.endDate}</span>
-                  }
+                  <span className="text-black kanit-300">{item.startDate} - {item.endDate}</span>
                 </div>
                 <ul className="responsibilities text-muted-foreground space-y-2">
                   {item.responsibilities.map((responsibility) => (
