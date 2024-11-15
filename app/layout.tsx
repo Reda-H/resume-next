@@ -7,8 +7,8 @@ import { Header } from '@/components/header';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Professional Resume',
-  description: 'My professional portfolio and resume',
+  title: 'Reda Herradi - Resume',
+  description: 'Reda Herradi\'s professional resume as a Senior Frontend Engineer',
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
