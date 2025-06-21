@@ -13,12 +13,24 @@ export default function Home() {
   const experience = [
     {
       company: {
+        name: "Oracle",
+        url: "https://www.oracle.com"
+      },
+      role: "Senior Frontend Engineer",
+      startDate: "February 2025",
+      endDate: "Present",
+      responsibilities: [
+        "Work on the development of Datastudio, a data visualization and graph exploration tool for Oracle customers",
+      ],
+    },
+    {
+      company: {
         name: "Nuitee",
         url: "https://nuitee.com"
       },
       role: "Senior Frontend Developer",
       startDate: "February 2024",
-      endDate: "Present",
+      endDate: "December 2024",
       responsibilities: [
         "Lead a team of 3 frontend developers for the WhiteLabel project, a highly customizable travel website generator for partners",
         "Spearheaded the complete redesign and development of the admin dashboard, significantly improving user experience and functionality",
@@ -147,7 +159,7 @@ export default function Home() {
             <div>
               <h3 className="text-lg font-semibold mb-4 kanit-800 text-black border-b border-black">Presentation</h3>
               <p className="text-muted-foreground kanit-300">
-                Senior Frontend Engineer with 4 years of experience, specializing in VueJs, modern JavaScript, and SEO. Currently leading frontend development initiatives and mentoring junior developers. Proven track record of driving adoption of best practices and delivering high-quality web applications. Demonstrates consistent growth through continuous learning and problem-solving. Seeking opportunities to leverage technical expertise and leadership skills in an innovative environment.
+                Senior Frontend Engineer with 5 years of experience, specializing in ReactJs, VueJs, modern JavaScript, and SEO. Currently working for a top leading software company in the world. Proven track record of driving adoption of best practices and delivering high-quality web applications. Demonstrates consistent growth through continuous learning and problem-solving. Seeking opportunities to leverage technical expertise and leadership skills in an innovative environment.
               </p>
             </div>
           </div>
