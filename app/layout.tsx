@@ -4,7 +4,6 @@ import { Inter } from 'next/font/google';
 import { Header } from '@/components/header';
 import ElasticMouseFollow from '@/components/ui/elastic-mouse-follow';
 
-
 const inter = Inter({ subsets: ['latin'] });
 
 const jsonLd = {
@@ -20,6 +19,7 @@ const jsonLd = {
 }
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://herradi.com'),
   title: 'Reda Herradi - Resume',
   description: 'Reda Herradi\'s professional resume as a Senior Frontend Engineer',
   icons: {
@@ -46,13 +46,28 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "herradi.com",
+    siteName: "Reda Herradi",
     title: "Reda Herradi - Senior Frontend Engineer",
     description: "Professional portfolio and resume of Reda Herradi, a Senior Frontend Engineer specializing in Vue.js and modern web development",
+    url: "/",
+    images: [
+      {
+        url: "/android-chrome-512x512.png",
+        width: 512,
+        height: 512,
+        alt: "Reda Herradi"
+      }
+    ]
   },
   twitter: {
+    card: "summary_large_image",
     title: "Reda Herradi - Senior Frontend Engineer",
     description: "Professional portfolio and resume of Reda Herradi",
+    creator: "@reda_herradi",
+    images: ["/android-chrome-512x512.png"]
+  },
+  alternates: {
+    canonical: "/"
   }
 };
 

@@ -5,6 +5,7 @@ import mainImage from "@/assets/resume-picture-headshot2.jpg"
 import Image from "next/image";
 import useIsMobile from "@/hooks/useIsMobile";
 import { Button } from "@/components/ui/button";
+import HalftoneBackground from "@/components/ui/halftone-background";
 
 export default function Home() {
 
@@ -75,7 +76,9 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col gap-12 max-w-5xl mx-auto px-4 md:px-6 py-12">
+    <>
+      <HalftoneBackground />
+      <div className="flex flex-col gap-12 max-w-5xl mx-auto px-4 md:px-6 py-12 relative z-10">
       <header id="header" className="w-full flex flex-row md:flex-col md:gap-12 scroll-mt-20">
         <div className="flex flex-col md:flex-row items-center justify-start md:justify-center md:gap-8 w-full">
           <div className={isMobile ? "flex flex-col gap-2 w-fit" : "flex flex-col gap-2"}>
@@ -221,5 +224,6 @@ export default function Home() {
         </section>
       </main>
     </div>
+    </>
   );
 }
