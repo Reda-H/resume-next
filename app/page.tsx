@@ -1,7 +1,7 @@
 'use client';
 
 import { Github, Linkedin, Mail } from "lucide-react";
-import mainImage from "@/assets/resume-picture-headshot2.jpg"
+import mainImage from "@/assets/resume-picture-headshot2.webp"
 import Image from "next/image";
 import useIsMobile from "@/hooks/useIsMobile";
 import { Button } from "@/components/ui/button";

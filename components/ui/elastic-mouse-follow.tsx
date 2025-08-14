@@ -2,8 +2,8 @@
 
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
-import mainImage from "@/assets/resume-picture-headshot2.jpg"
-import altImage from "@/assets/resume-picture-point-top-left.png"
+import mainImage from "@/assets/resume-picture-headshot2.webp"
+import altImage from "@/assets/resume-picture-point-top-left.webp"
 
 
 const MouseFollowWrapper = ({ children }: { children: React.ReactNode }) => {
