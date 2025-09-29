@@ -210,9 +210,9 @@ export default function Home() {
               <p className="text-muted-foreground no-underline">Email</p>
               <p className="text-muted-foreground no-underline">herradi.r@gmail.com</p>
             </a>
-            <a href="tel:+16472478864" className="flex flex-row w-full justify-between no-underline hover-animation">
+            <a href="tel:+212697444476" className="flex flex-row w-full justify-between no-underline hover-animation">
               <p className="text-muted-foreground no-underline">Phone</p>
-              <p className="text-muted-foreground no-underline">+1 647 247 88 64</p>
+              <p className="text-muted-foreground no-underline">+212 697 444 476</p>
             </a>
             <a href="https://github.com/Reda-H" target="_blank" rel="noopener noreferrer" className="flex flex-row w-full justify-between no-underline hover-animation">
               <p className="text-muted-foreground no-underline">GitHub</p>
