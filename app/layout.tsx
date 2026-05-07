@@ -47,7 +47,8 @@ const jsonLd = {
       ],
       "sameAs": [
         "https://github.com/Reda-H",
-        "https://www.linkedin.com/in/reda-herradi/"
+        "https://www.linkedin.com/in/reda-herradi/",
+        "https://twitter.com/HerradiR"
       ]
     },
     {
