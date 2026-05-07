@@ -81,6 +81,9 @@ export const metadata: Metadata = {
     ],
   },
   robots: { index: true, follow: true },
+  verification: {
+    other: { "msvalidate.01": "1342F8BA7874ECB161A2A2849732E6BD" },
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
