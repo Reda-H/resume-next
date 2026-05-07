@@ -18,9 +18,95 @@ export const metadata: Metadata = {
   },
 };
 
+const PERSON_ID = "https://herradi.com/#person";
+
+const experienceJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "url": "https://herradi.com/experience",
+      "mainEntity": { "@id": PERSON_ID },
+    },
+    {
+      "@type": "OrganizationRole",
+      "@id": "https://herradi.com/experience#oracle",
+      "roleName": "Senior Software Engineer",
+      "startDate": "2025-02",
+      "member": { "@id": PERSON_ID },
+      "memberOf": {
+        "@type": "Organization",
+        "name": "Oracle",
+        "url": "https://www.oracle.com",
+      },
+      "description":
+        "Senior software engineer on the Oracle Payment System; previously on Datastudio. Member of the IAAP and on a leadership track.",
+    },
+    {
+      "@type": "OrganizationRole",
+      "@id": "https://herradi.com/experience#nuitee",
+      "roleName": "Frontend Lead",
+      "startDate": "2024-02",
+      "endDate": "2024-12",
+      "member": { "@id": PERSON_ID },
+      "memberOf": {
+        "@type": "Organization",
+        "name": "Nuitee",
+        "url": "https://nuitee.com",
+      },
+      "description":
+        "Led a team of three frontend developers on WhiteLabel, a customizable travel-site generator. Drove the admin dashboard redesign and B2C overhaul.",
+    },
+    {
+      "@type": "OrganizationRole",
+      "@id": "https://herradi.com/experience#bell",
+      "roleName": "Software Engineer",
+      "startDate": "2022-12",
+      "endDate": "2024-01",
+      "member": { "@id": PERSON_ID },
+      "memberOf": {
+        "@type": "Organization",
+        "name": "Bell",
+        "url": "https://www.bell.ca",
+      },
+      "description":
+        "Software engineer across web projects for Bell and Bell Media in Vue.js, Adobe Experience Manager, and Java.",
+    },
+    {
+      "@type": "OrganizationRole",
+      "@id": "https://herradi.com/experience#sqli",
+      "roleName": "Frontend Engineer",
+      "startDate": "2021-07",
+      "endDate": "2022-11",
+      "member": { "@id": PERSON_ID },
+      "memberOf": {
+        "@type": "Organization",
+        "name": "SQLi",
+      },
+      "description":
+        "Frontend engineering for clients including Tesco and Nespresso, in NuxtJS, Vue, and TypeScript.",
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Bachelor's Degree",
+      "educationalLevel": "Bachelor",
+      "name": "Bachelor of Computer Science",
+      "recognizedBy": {
+        "@type": "CollegeOrUniversity",
+        "name": "Al Akhawayn University in Ifrane",
+        "url": "https://www.aui.ma",
+      },
+    },
+  ],
+};
+
 export default function Experience() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(experienceJsonLd) }}
+      />
       <h1 className="font-semibold mb-7 text-foreground">Experience</h1>
 
       <h2 className="font-semibold mt-10 mb-3 text-foreground">

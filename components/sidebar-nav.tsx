@@ -24,8 +24,8 @@ export function SidebarNav() {
                 draggable={false}
                 className={`inline-block w-full px-2 focus-visible:outline focus-visible:outline-1 focus-visible:outline-dotted focus-visible:outline-primary ${
                   active
-                    ? "text-foreground"
-                    : "text-foreground/40 hover:text-foreground/70"
+                    ? "text-foreground underline decoration-primary decoration-dotted decoration-1 underline-offset-4"
+                    : "text-foreground/80 hover:text-foreground"
                 }`}
               >
                 {item.name}
