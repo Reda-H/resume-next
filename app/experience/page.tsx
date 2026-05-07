@@ -40,7 +40,7 @@ const experienceJsonLd = {
         "url": "https://www.oracle.com",
       },
       "description":
-        "Senior software engineer on OraclePayment System; previously on Datastudio. Member of the IAAP and on a leadership track.",
+        "Senior software engineer on Oracle Payment System; previously on Datastudio. Member of the IAAP and on a leadership track.",
     },
     {
       "@type": "OrganizationRole",

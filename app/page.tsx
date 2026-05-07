@@ -4,18 +4,18 @@ import { TransitionLink } from "@/components/transition-link";
 export const metadata: Metadata = {
   title: { absolute: "Reda Herradi — Senior Software Engineer" },
   description:
-    "Reda Herradi is a senior software engineer at Oracle, based in Morocco. He works on OraclePayment System and was previously on Datastudio.",
+    "Reda Herradi is a senior software engineer at Oracle, based in Morocco. He works on Oracle Payment System and was previously on Datastudio.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "Reda Herradi — Senior Software Engineer",
     description:
-      "Senior software engineer at Oracle, based in Morocco. Working on OraclePayment System.",
+      "Senior software engineer at Oracle, based in Morocco. Working on Oracle Payment System.",
     url: "/",
   },
   twitter: {
     title: "Reda Herradi — Senior Software Engineer",
     description:
-      "Senior software engineer at Oracle, based in Morocco. Working on OraclePayment System.",
+      "Senior software engineer at Oracle, based in Morocco. Working on Oracle Payment System.",
   },
 };
 
@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "Where does Reda Herradi work?",
-    a: "Reda is a senior software engineer at Oracle, where he works on OraclePayment System.",
+    a: "Reda is a senior software engineer at Oracle, where he works on Oracle Payment System.",
   },
   {
     q: "What did Reda Herradi do before Oracle?",
@@ -83,7 +83,7 @@ export default function Home() {
         >
           Oracle
         </a>
-        , based in Morocco. These days I work on OraclePayment System —
+        , based in Morocco. These days I work on Oracle Payment System —
         used by multi-billion-dollar companies to manage payments with their
         customers. Before that I spent a chapter on Datastudio, a data
         visualization and graph exploration tool, from active development

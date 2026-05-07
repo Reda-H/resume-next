@@ -15,7 +15,7 @@ const jsonLd = {
       "givenName": "Reda",
       "familyName": "Herradi",
       "jobTitle": "Senior Software Engineer",
-      "description": "Senior software engineer at Oracle, working on OraclePayment System. Based in Morocco.",
+      "description": "Senior software engineer at Oracle, working on Oracle Payment System. Based in Morocco.",
       "url": SITE_URL,
       "image": `${SITE_URL}/android-chrome-512x512.png`,
       "worksFor": {
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     template: '%s — Reda Herradi',
   },
   description:
-    "Reda Herradi is a senior software engineer at Oracle, based in Morocco. He works on OraclePayment System and previously led frontend at Nuitee.",
+    "Reda Herradi is a senior software engineer at Oracle, based in Morocco. He works on Oracle Payment System and previously led frontend at Nuitee.",
   themeColor: '#fcfcfc',
   icons: {
     icon: '/favicon.ico',
@@ -86,14 +86,14 @@ export const metadata: Metadata = {
     siteName: 'Reda Herradi',
     title: 'Reda Herradi — Senior Software Engineer',
     description:
-      "Senior software engineer at Oracle, based in Morocco. Working on OraclePayment System.",
+      "Senior software engineer at Oracle, based in Morocco. Working on Oracle Payment System.",
     url: '/',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Reda Herradi — Senior Software Engineer',
     description:
-      "Senior software engineer at Oracle, based in Morocco. Working on OraclePayment System.",
+      "Senior software engineer at Oracle, based in Morocco. Working on Oracle Payment System.",
     creator: '@HerradiR',
   },
 };
