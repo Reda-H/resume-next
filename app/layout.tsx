@@ -14,7 +14,7 @@ const jsonLd = {
       "givenName": "Reda",
       "familyName": "Herradi",
       "jobTitle": "Senior Software Engineer",
-      "description": "Senior frontend engineer at Oracle, working on the Oracle Payment System. Based in Morocco.",
+      "description": "Senior software engineer at Oracle, working on the Oracle Payment System. Based in Morocco.",
       "url": SITE_URL,
       "image": `${SITE_URL}/android-chrome-512x512.png`,
       "worksFor": {
@@ -85,19 +85,15 @@ export const metadata: Metadata = {
     siteName: 'Reda Herradi',
     title: 'Reda Herradi — Senior Software Engineer',
     description:
-      "Senior frontend engineer at Oracle, based in Morocco. Working on the Oracle Payment System.",
+      "Senior software engineer at Oracle, based in Morocco. Working on the Oracle Payment System.",
     url: '/',
-    images: [
-      { url: '/android-chrome-512x512.png', width: 512, height: 512, alt: 'Reda Herradi' },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Reda Herradi — Senior Software Engineer',
     description:
-      "Senior frontend engineer at Oracle, based in Morocco. Working on the Oracle Payment System.",
+      "Senior software engineer at Oracle, based in Morocco. Working on the Oracle Payment System.",
     creator: '@HerradiR',
-    images: ['/android-chrome-512x512.png'],
   },
 };
 

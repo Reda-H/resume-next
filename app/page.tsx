@@ -9,15 +9,34 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Reda Herradi — Senior Software Engineer",
     description:
-      "Senior frontend engineer at Oracle, based in Morocco. Working on the Oracle Payment System.",
+      "Senior software engineer at Oracle, based in Morocco. Working on the Oracle Payment System.",
     url: "/",
   },
   twitter: {
     title: "Reda Herradi — Senior Software Engineer",
     description:
-      "Senior frontend engineer at Oracle, based in Morocco. Working on the Oracle Payment System.",
+      "Senior software engineer at Oracle, based in Morocco. Working on the Oracle Payment System.",
   },
 };
+
+const faqs = [
+  {
+    q: "Where is Reda Herradi based?",
+    a: "Reda Herradi is based in Morocco.",
+  },
+  {
+    q: "Where does Reda Herradi work?",
+    a: "Reda is a senior software engineer at Oracle, where he works on the Oracle Payment System.",
+  },
+  {
+    q: "What did Reda Herradi do before Oracle?",
+    a: "Before Oracle, Reda led a frontend team at Nuitee on the WhiteLabel travel-site generator, and previously worked at Bell and SQLi on projects for Bell Media, Tesco, and Nespresso.",
+  },
+  {
+    q: "What technologies does Reda Herradi work with?",
+    a: "Reda specializes in frontend engineering with Vue.js, React, TypeScript, Next.js, and Node.js, with a focus on team leadership, web performance, and accessibility.",
+  },
+];
 
 const aboutJsonLd = {
   "@context": "https://schema.org",
@@ -29,40 +48,11 @@ const aboutJsonLd = {
     },
     {
       "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Where is Reda Herradi based?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Reda Herradi is based in Morocco.",
-          },
-        },
-        {
-          "@type": "Question",
-          "name": "Where does Reda Herradi work?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Reda is a senior software engineer at Oracle, where he works on the Oracle Payment System.",
-          },
-        },
-        {
-          "@type": "Question",
-          "name": "What did Reda Herradi do before Oracle?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Before Oracle, Reda led a frontend team at Nuitee on the WhiteLabel travel-site generator, and previously worked at Bell and SQLi on projects for Bell Media, Tesco, and Nespresso.",
-          },
-        },
-        {
-          "@type": "Question",
-          "name": "What technologies does Reda Herradi work with?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Reda specializes in frontend engineering with Vue.js, React, TypeScript, Next.js, and Node.js, with a focus on team leadership, web performance, and accessibility.",
-          },
-        },
-      ],
+      "mainEntity": faqs.map((f) => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a },
+      })),
     },
   ],
 };
@@ -73,6 +63,14 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }}
+      />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/resume-picture-headshot.webp"
+        alt="Reda Herradi"
+        width={80}
+        height={80}
+        className="mb-6 block h-20 w-20 object-cover rounded"
       />
       <h1 className="font-semibold mb-7 text-foreground">Reda Herradi</h1>
       <p className="mt-7">
@@ -112,6 +110,16 @@ export default function Home() {
         </TransitionLink>
         .
       </p>
+
+      <h2 className="font-semibold mt-12 mb-2 text-foreground">FAQ</h2>
+      <dl>
+        {faqs.map((f) => (
+          <div key={f.q} className="mt-6">
+            <dt className="font-semibold text-foreground">{f.q}</dt>
+            <dd className="mt-2">{f.a}</dd>
+          </div>
+        ))}
+      </dl>
     </>
   );
 }
