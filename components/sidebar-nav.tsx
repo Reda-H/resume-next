@@ -7,6 +7,7 @@ const items = [
   { name: "About", href: "/" },
   { name: "Experience", href: "/experience" },
   { name: "Contact", href: "/contact" },
+  { name: "Stats", href: "/stats" },
 ];
 
 export function SidebarNav() {
