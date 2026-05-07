@@ -1,10 +1,21 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Oswald, Kanit } from 'next/font/google';
 import { Header } from '@/components/header';
-import ElasticMouseFollow from '@/components/ui/elastic-mouse-follow';
 
-const inter = Inter({ subsets: ['latin'] });
+const oswald = Oswald({
+  subsets: ['latin'],
+  weight: ['700'],
+  variable: '--font-oswald',
+  display: 'swap',
+});
+
+const kanit = Kanit({
+  subsets: ['latin'],
+  weight: ['300', '400', '600', '800'],
+  variable: '--font-kanit',
+  display: 'swap',
+});
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -77,18 +88,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={`${oswald.variable} ${kanit.variable}`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={inter.className}>
-        <ElasticMouseFollow>
-          <Header />
-          {children}
-        </ElasticMouseFollow>
+      <body>
+        <Header />
+        {children}
       </body>
     </html>
   );

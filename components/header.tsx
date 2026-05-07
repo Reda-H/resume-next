@@ -37,14 +37,14 @@ export function Header() {
       <div className="container flex h-14 items-center justify-between mx-auto">
         <div className="flex items-center justify-between gap-6 w-full pl-6">
           <a className="flex items-center space-x-2" onClick={() => scrollToSection("#header")}>
-            <span className="font-bold oswald-900">Reda Herradi</span>
+            <span className="font-bold oswald-700">Reda Herradi</span>
           </a>
           <nav className="hidden md:flex items-center text-sm font-medium">
             {navItems.map((item) => (
               <Button
                 key={item.href}
                 variant="ghost"
-                className="text-secondary hover:text-white oswald-900"
+                className="text-secondary hover:text-white oswald-700"
                 onClick={() => scrollToSection(item.href)}
               >
                 {item.name}
