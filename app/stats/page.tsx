@@ -145,7 +145,8 @@ export default async function Stats() {
 
       <p className="mt-12 text-foreground/60 text-xs">
         Bucketing is best-effort — bots that spoof browser user-agents will be
-        counted as people. No cookies, no IPs, no fingerprinting.
+        counted as people. People are deduped with a random 30-day cookie so
+        reloads don&apos;t inflate the count. No IPs, no fingerprinting.
       </p>
     </>
   );
