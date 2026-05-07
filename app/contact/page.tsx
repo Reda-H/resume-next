@@ -1,3 +1,21 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Get in touch with Reda Herradi — email, phone, GitHub, and LinkedIn.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact — Reda Herradi",
+    description: "Email, phone, GitHub, and LinkedIn for Reda Herradi.",
+    url: "/contact",
+  },
+  twitter: {
+    title: "Contact — Reda Herradi",
+    description: "Email, phone, GitHub, and LinkedIn for Reda Herradi.",
+  },
+};
+
 export default function Contact() {
   return (
     <>
@@ -6,6 +24,10 @@ export default function Contact() {
         Email is the fastest way to reach me —{" "}
         <a className="prose-link" href="mailto:herradi.r@gmail.com">
           herradi.r@gmail.com
+        </a>
+        . You can also call or text me at{" "}
+        <a className="prose-link" href="tel:+212697444476">
+          +212 697 444 476
         </a>
         .
       </p>

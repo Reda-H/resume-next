@@ -2,22 +2,72 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { SidebarNav } from '@/components/sidebar-nav';
 
+const SITE_URL = 'https://herradi.com';
+
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Reda Herradi",
-  "jobTitle": "Senior Frontend Engineer",
-  "url": "https://herradi.com",
-  "sameAs": [
-    "https://github.com/Reda-H",
-    "https://www.linkedin.com/in/reda-herradi/"
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
+      "name": "Reda Herradi",
+      "givenName": "Reda",
+      "familyName": "Herradi",
+      "jobTitle": "Senior Software Engineer",
+      "description": "Senior frontend engineer at Oracle, working on the Oracle Payment System. Based in Morocco.",
+      "url": SITE_URL,
+      "image": `${SITE_URL}/android-chrome-512x512.png`,
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Oracle",
+        "url": "https://www.oracle.com"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Al Akhawayn University in Ifrane",
+        "url": "https://www.aui.ma"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "MA"
+      },
+      "telephone": "+212697444476",
+      "email": "herradi.r@gmail.com",
+      "knowsAbout": [
+        "Frontend Engineering",
+        "Vue.js",
+        "React",
+        "TypeScript",
+        "Next.js",
+        "Node.js",
+        "Web Performance",
+        "Web Accessibility",
+        "Team Leadership"
+      ],
+      "sameAs": [
+        "https://github.com/Reda-H",
+        "https://www.linkedin.com/in/reda-herradi/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      "url": SITE_URL,
+      "name": "Reda Herradi",
+      "publisher": { "@id": `${SITE_URL}/#person` },
+      "inLanguage": "en"
+    }
   ]
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://herradi.com'),
-  title: 'Reda Herradi',
-  description: "Reda Herradi — Senior Frontend Engineer.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: 'Reda Herradi — Senior Software Engineer',
+    template: '%s — Reda Herradi',
+  },
+  description:
+    "Reda Herradi is a senior software engineer at Oracle, based in Morocco. He works on the Oracle Payment System and previously led frontend at Nuitee.",
   themeColor: '#fcfcfc',
   icons: {
     icon: '/favicon.ico',
@@ -28,27 +78,27 @@ export const metadata: Metadata = {
       { rel: 'icon', type: 'image/png', sizes: '32x32', url: '/favicon-32x32.png' },
     ],
   },
-  keywords: "Reda Herradi, Frontend Engineer, Senior Developer, Vue.js, JavaScript, TypeScript, Web Development",
-  robots: "index, follow",
+  robots: { index: true, follow: true },
   openGraph: {
-    type: "website",
-    locale: "en_US",
-    siteName: "Reda Herradi",
-    title: "Reda Herradi — Senior Frontend Engineer",
-    description: "Senior Frontend Engineer.",
-    url: "/",
+    type: 'website',
+    locale: 'en_US',
+    siteName: 'Reda Herradi',
+    title: 'Reda Herradi — Senior Software Engineer',
+    description:
+      "Senior frontend engineer at Oracle, based in Morocco. Working on the Oracle Payment System.",
+    url: '/',
     images: [
-      { url: "/android-chrome-512x512.png", width: 512, height: 512, alt: "Reda Herradi" }
-    ]
+      { url: '/android-chrome-512x512.png', width: 512, height: 512, alt: 'Reda Herradi' },
+    ],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Reda Herradi — Senior Frontend Engineer",
-    description: "Senior Frontend Engineer.",
-    creator: "@reda_herradi",
-    images: ["/android-chrome-512x512.png"]
+    card: 'summary_large_image',
+    title: 'Reda Herradi — Senior Software Engineer',
+    description:
+      "Senior frontend engineer at Oracle, based in Morocco. Working on the Oracle Payment System.",
+    creator: '@HerradiR',
+    images: ['/android-chrome-512x512.png'],
   },
-  alternates: { canonical: "/" }
 };
 
 export default function RootLayout({

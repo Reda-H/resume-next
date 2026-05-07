@@ -1,3 +1,23 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Experience",
+  description:
+    "Reda Herradi's professional history — Oracle (Datastudio, Payment System), Nuitee, Bell, and SQLi.",
+  alternates: { canonical: "/experience" },
+  openGraph: {
+    title: "Experience — Reda Herradi",
+    description:
+      "Roles at Oracle, Nuitee, Bell, and SQLi, with education at Al Akhawayn University.",
+    url: "/experience",
+  },
+  twitter: {
+    title: "Experience — Reda Herradi",
+    description:
+      "Roles at Oracle, Nuitee, Bell, and SQLi, with education at Al Akhawayn University.",
+  },
+};
+
 export default function Experience() {
   return (
     <>
