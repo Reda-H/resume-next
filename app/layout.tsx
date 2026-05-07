@@ -65,6 +65,36 @@ export default function RootLayout({
         />
       </head>
       <body className="w-full p-6 sm:p-10 md:p-14 text-sm leading-6 sm:text-[15px] sm:leading-7 md:text-base md:leading-7">
+        <svg
+          aria-hidden="true"
+          className="absolute h-0 w-0 overflow-hidden"
+          focusable="false"
+        >
+          <filter id="grain" x="0%" y="0%" width="100%" height="100%">
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.9"
+              numOctaves="2"
+              stitchTiles="stitch"
+              result="turb"
+            />
+            <feColorMatrix
+              in="turb"
+              values="0 0 0 0 0.5
+                      0 0 0 0 0.5
+                      0 0 0 0 0.5
+                      0 0 0 0.7 0"
+              result="grayNoise"
+            />
+            <feComposite
+              in="grayNoise"
+              in2="SourceGraphic"
+              operator="in"
+              result="grainBounded"
+            />
+            <feBlend in="SourceGraphic" in2="grainBounded" mode="overlay" />
+          </filter>
+        </svg>
         <div className="flex flex-col sm:flex-row">
           <SidebarNav />
           <main className="relative flex-1 max-w-2xl">

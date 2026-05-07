@@ -71,3 +71,38 @@
     outline-offset: 2px;
   }
 }
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 550ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  animation-name: grain-out;
+}
+
+::view-transition-new(root) {
+  animation-name: grain-in;
+}
+
+@keyframes grain-out {
+  0%   { opacity: 1; filter: none; }
+  20%  { opacity: 0.9; filter: url(#grain); }
+  100% { opacity: 0; filter: url(#grain); }
+}
+
+@keyframes grain-in {
+  0%   { opacity: 0; filter: url(#grain); }
+  80%  { opacity: 0.95; filter: url(#grain); }
+  100% { opacity: 1; filter: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 1ms;
+    animation-name: none;
+  }
+}

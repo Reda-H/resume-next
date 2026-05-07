@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { TransitionLink } from "@/components/transition-link";
 
 const items = [
   { name: "About", href: "/" },
@@ -19,7 +19,7 @@ export function SidebarNav() {
           const active = pathname === item.href;
           return (
             <li key={item.href} className="-mx-2 transition-colors">
-              <Link
+              <TransitionLink
                 href={item.href}
                 draggable={false}
                 className={`inline-block w-full px-2 focus-visible:outline focus-visible:outline-1 focus-visible:outline-dotted focus-visible:outline-primary ${
@@ -29,7 +29,7 @@ export function SidebarNav() {
                 }`}
               >
                 {item.name}
-              </Link>
+              </TransitionLink>
             </li>
           );
         })}

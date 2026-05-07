@@ -1,3 +1,5 @@
+import { TransitionLink } from "@/components/transition-link";
+
 export default function Home() {
   return (
     <>
@@ -17,13 +19,13 @@ export default function Home() {
       </p>
       <p className="mt-7">
         You can read more about my{" "}
-        <a className="prose-link" href="/experience">
+        <TransitionLink className="prose-link" href="/experience">
           experience
-        </a>{" "}
+        </TransitionLink>{" "}
         or get in{" "}
-        <a className="prose-link" href="/contact">
+        <TransitionLink className="prose-link" href="/contact">
           contact
-        </a>
+        </TransitionLink>
         .
       </p>
     </>
