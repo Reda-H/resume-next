@@ -2,186 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-.oswald-700 {
-  font-family: var(--font-oswald), sans-serif;
-  font-weight: 700;
-}
-
-.kanit-300 {
-  font-family: var(--font-kanit), sans-serif;
-  font-weight: 300;
-}
-.kanit-400 {
-  font-family: var(--font-kanit), sans-serif;
-  font-weight: 400;
-}
-.kanit-600 {
-  font-family: var(--font-kanit), sans-serif;
-  font-weight: 600;
-}
-.kanit-800 {
-  font-family: var(--font-kanit), sans-serif;
-  font-weight: 800;
-}
-
-
 @layer base {
   :root {
-    --background: 220 33% 97%;    /* #edf2f7 */
-    --foreground: 222 47% 11%;    /* #1a202c */
+    --background: 0 0% 99%;
+    --foreground: 220 14% 28%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card: 0 0% 99%;
+    --card-foreground: 220 14% 28%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover: 0 0% 99%;
+    --popover-foreground: 220 14% 28%;
 
-    --primary: 159 40% 35%;       /* #2f855a */
-    --primary-foreground: 210 40% 98%;
+    --primary: 7 59% 49%;
+    --primary-foreground: 0 0% 99%;
 
-    --secondary: 220 14% 35%;     /* #4a5568 */
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 220 12% 50%;
+    --secondary-foreground: 220 14% 28%;
 
-    --muted: 220 14% 35%;
-    --muted-foreground: 220 14% 35%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 12% 45%;
 
-    --accent: 159 40% 35%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 7 59% 49%;
+    --accent-foreground: 0 0% 99%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 99%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222 47% 11%;
+    --border: 220 13% 88%;
+    --input: 220 13% 88%;
+    --ring: 7 59% 49%;
 
     --radius: 0px;
   }
-
-  .dark {
-    --background: 222 47% 11%;    /* #1a202c */
-    --foreground: 210 40% 98%;
-
-    --card: 222 47% 11%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 159 40% 35%;       /* #2f855a */
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 217 19% 27%;     /* #4a5568 */
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217 19% 27%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 159 40% 35%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217 19% 27%;
-    --input: 217 19% 27%;
-    --ring: 212.7 26.8% 83.9%;
-  }
 }
 
 @layer base {
+  html {
+    color-scheme: light;
+  }
+
   * {
     @apply border-border;
   }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-muted-foreground antialiased;
+    font-feature-settings: "ss01", "cv11";
   }
-  h1 {
-    @apply text-4xl font-bold text-foreground;
-  }
-  h2 {
-    @apply text-2xl font-semibold text-secondary;
-  }
-  h3 {
-    @apply text-xl font-semibold text-secondary;
-  }
-  p {
-    @apply text-base text-foreground;
-  }
-  a {
-    @apply text-primary hover:underline;
+
+  h1, h2, h3, h4 {
+    @apply text-foreground font-semibold;
+    text-wrap: balance;
   }
 }
 
-.responsibilities ul {
-  list-style: none;
-  margin-left: 0;
-  padding-left: 0;
-}
-
-li {
-  padding-left: 1.5em;
-  text-indent: -1.6em;
-}
-
-li:before {
-  content: "$>";
-  font-weight: bold;
-  padding-right: 5px;
-}
-
-
-.hover-animation {
-  position: relative;
-  text-decoration: none;
-}
-
-.hover-animation::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background-color: #000000;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.6s ease-in-out;
-}
-
-.hover-animation:hover::after {
-  transform: scaleX(1);
-}
-
-/* Alternative version with smoother gradient effect */
-.pulsating-border-smooth {
-  position: relative;
-}
-
-.pulsating-border-smooth::before {
-  content: '';
-  position: absolute;
-  left: -20px;
-  top: 0;
-  width: 5px;
-  height: 100%;
-  animation: smoothPulse 1s ease-in-out infinite;
-  background: linear-gradient(to bottom, hsl(159, 40%, 35%), hsl(159, 40%, 35%));
-  pointer-events: none;  /* Ensures it doesn't interfere with clicks */
-  z-index: 1;  /* Adjust if needed based on your content */
-}
-
-@keyframes smoothPulse {
-  0% {
-    opacity: 0.4;
-    box-shadow: -5px 0 15px -5px hsl(159, 40%, 35%);
+@layer components {
+  .prose-link {
+    @apply underline underline-offset-2 decoration-from-font;
+    text-decoration-color: hsl(var(--border));
+    transition: text-decoration-color 0.15s ease, color 0.15s ease;
   }
-  50% {
-    opacity: 1;
-    box-shadow: -5px 0 15px -5px hsl(159, 40%, 35%);
+  .prose-link:hover {
+    text-decoration-color: hsl(var(--primary));
+    color: hsl(var(--primary));
   }
-  100% {
-    opacity: 0.4;
-    box-shadow: -5px 0 15px -5px hsl(159, 40%, 35%);
+  .prose-link:focus-visible {
+    outline: 1px dotted hsl(var(--primary));
+    outline-offset: 2px;
   }
 }

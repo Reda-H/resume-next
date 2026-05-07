@@ -1,21 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Oswald, Kanit } from 'next/font/google';
-import { Header } from '@/components/header';
-
-const oswald = Oswald({
-  subsets: ['latin'],
-  weight: ['700'],
-  variable: '--font-oswald',
-  display: 'swap',
-});
-
-const kanit = Kanit({
-  subsets: ['latin'],
-  weight: ['300', '400', '600', '800'],
-  variable: '--font-kanit',
-  display: 'swap',
-});
+import { SidebarNav } from '@/components/sidebar-nav';
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -27,29 +12,20 @@ const jsonLd = {
     "https://github.com/Reda-H",
     "https://www.linkedin.com/in/reda-herradi/"
   ]
-}
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://herradi.com'),
-  title: 'Reda Herradi - Resume',
-  description: 'Reda Herradi\'s professional resume as a Senior Frontend Engineer',
+  title: 'Reda Herradi',
+  description: "Reda Herradi — Senior Frontend Engineer.",
+  themeColor: '#fcfcfc',
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
     apple: '/apple-touch-icon.png',
     other: [
-      {
-        rel: 'icon',
-        type: 'image/png',
-        sizes: '16x16',
-        url: '/favicon-16x16.png',
-      },
-      {
-        rel: 'icon',
-        type: 'image/png',
-        sizes: '32x32',
-        url: '/favicon-32x32.png',
-      },
+      { rel: 'icon', type: 'image/png', sizes: '16x16', url: '/favicon-16x16.png' },
+      { rel: 'icon', type: 'image/png', sizes: '32x32', url: '/favicon-32x32.png' },
     ],
   },
   keywords: "Reda Herradi, Frontend Engineer, Senior Developer, Vue.js, JavaScript, TypeScript, Web Development",
@@ -58,28 +34,21 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Reda Herradi",
-    title: "Reda Herradi - Senior Frontend Engineer",
-    description: "Professional portfolio and resume of Reda Herradi, a Senior Frontend Engineer specializing in Vue.js and modern web development",
+    title: "Reda Herradi — Senior Frontend Engineer",
+    description: "Senior Frontend Engineer.",
     url: "/",
     images: [
-      {
-        url: "/android-chrome-512x512.png",
-        width: 512,
-        height: 512,
-        alt: "Reda Herradi"
-      }
+      { url: "/android-chrome-512x512.png", width: 512, height: 512, alt: "Reda Herradi" }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Reda Herradi - Senior Frontend Engineer",
-    description: "Professional portfolio and resume of Reda Herradi",
+    title: "Reda Herradi — Senior Frontend Engineer",
+    description: "Senior Frontend Engineer.",
     creator: "@reda_herradi",
     images: ["/android-chrome-512x512.png"]
   },
-  alternates: {
-    canonical: "/"
-  }
+  alternates: { canonical: "/" }
 };
 
 export default function RootLayout({
@@ -88,16 +57,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${oswald.variable} ${kanit.variable}`}>
+    <html lang="en" className="overflow-x-hidden touch-manipulation">
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body>
-        <Header />
-        {children}
+      <body className="w-full p-6 sm:p-10 md:p-14 text-sm leading-6 sm:text-[15px] sm:leading-7 md:text-base md:leading-7">
+        <div className="flex flex-col sm:flex-row">
+          <SidebarNav />
+          <main className="relative flex-1 max-w-2xl">
+            <div className="absolute w-full h-px opacity-50 bg-border right-0 sm:right-auto sm:left-0 sm:w-px sm:h-full sm:opacity-100 mix-blend-multiply" />
+            <article className="pl-0 pt-6 sm:pt-0 sm:pl-10 md:pl-14 animate-in fade-in duration-500">
+              {children}
+            </article>
+          </main>
+        </div>
       </body>
     </html>
   );
