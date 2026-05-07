@@ -2,7 +2,90 @@ export default function Experience() {
   return (
     <>
       <h1 className="font-semibold mb-7 text-foreground">Experience</h1>
-      <p className="mt-7">Placeholder — prose history goes here.</p>
+
+      <h2 className="font-semibold mt-10 mb-3 text-foreground">
+        Oracle{" "}
+        <span className="font-normal text-foreground/40">
+          — Feb 2025 to present
+        </span>
+      </h2>
+      <p className="mt-4">
+        I joined Oracle to work on Datastudio, a data visualization and graph
+        exploration tool, and stayed with the project from active development
+        through to its handover. Since then I&apos;ve moved onto the Oracle
+        Payment System — used by multi-billion-dollar companies to manage
+        payments with their customers — leading a team, contributing to product
+        design, and writing code as well as shipping it.
+      </p>
+      <p className="mt-4">
+        As part of the IAAP I also work alongside C-suite and directors on the
+        new projects coming into Oracle, and was recently placed on a
+        leadership track aimed at engineers being grown into bigger roles.
+      </p>
+
+      <h2 className="font-semibold mt-10 mb-3 text-foreground">
+        Nuitee{" "}
+        <span className="font-normal text-foreground/40">
+          — Feb 2024 to Dec 2024
+        </span>
+      </h2>
+      <p className="mt-4">
+        I led a team of three frontend developers on WhiteLabel, a heavily
+        customizable travel-site generator for Nuitee&apos;s partners. The
+        biggest pieces of work were a complete redesign of the admin dashboard
+        and a top-to-bottom overhaul of the B2C interface — both of which
+        moved client satisfaction and conversion in the right direction.
+      </p>
+      <p className="mt-4">
+        Alongside that I pushed standards across the codebase — architecture,
+        performance, code quality — and added the SEO layer that helped
+        partner sites actually get found. The stack was Vue, with a healthy
+        amount of Node and SQL once I started crossing into backend territory.
+      </p>
+
+      <h2 className="font-semibold mt-10 mb-3 text-foreground">
+        Bell{" "}
+        <span className="font-normal text-foreground/40">
+          — Dec 2022 to Jan 2024
+        </span>
+      </h2>
+      <p className="mt-4">
+        I worked as a software engineer across a handful of web projects for
+        Bell and Bell Media, in Vue.js, Adobe Experience Manager, and Java.
+        Most of my time went into the reusable UI layer — cards, sliders,
+        banners, the usual — plus the user tracking, third-party integrations,
+        and data aggregation behind the scenes.
+      </p>
+      <p className="mt-4">
+        The team was the cross-functional kind: designers, backend developers,
+        and project stakeholders all in the same loop. I did a lot of code
+        review and helped onboard new engineers alongside the feature work.
+      </p>
+
+      <h2 className="font-semibold mt-10 mb-3 text-foreground">
+        SQLi{" "}
+        <span className="font-normal text-foreground/40">
+          — Jul 2021 to Nov 2022
+        </span>
+      </h2>
+      <p className="mt-4">
+        My first stint as a software engineer was on frontend work for clients
+        like Tesco and Nespresso, in NuxtJS, Vue, and TypeScript. I built and
+        shipped a lot of components — dynamic cards, interactive sliders,
+        configurable banners — implemented the user-tracking layer with the
+        analytics team, and worked directly with Nestlé&apos;s design team to
+        keep the Figma-to-production gap tight.
+      </p>
+      <p className="mt-4">
+        It&apos;s also where I picked up the basics of project planning, code
+        review at scale, and the muscle memory of working with big-brand
+        stakeholders.
+      </p>
+
+      <h2 className="font-semibold mt-10 mb-3 text-foreground">Education</h2>
+      <p className="mt-4">
+        Bachelor of Computer Science, Al Akhawayn University in Ifrane.
+      </p>
     </>
   );
 }
