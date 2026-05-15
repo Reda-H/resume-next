@@ -6,6 +6,7 @@ import { TransitionLink } from "@/components/transition-link";
 const items = [
   { name: "About", href: "/" },
   { name: "Experience", href: "/experience" },
+  { name: "Journal", href: "/journal" },
   { name: "Contact", href: "/contact" },
   { name: "Stats", href: "/stats" },
 ];
