@@ -104,6 +104,10 @@ export default function Home() {
         <TransitionLink className="prose-link" href="/experience">
           experience
         </TransitionLink>
+        , download my{" "}
+        <TransitionLink className="prose-link" href="/resume">
+          resume
+        </TransitionLink>
         , or get in{" "}
         <TransitionLink className="prose-link" href="/contact">
           contact

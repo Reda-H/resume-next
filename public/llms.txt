@@ -10,6 +10,7 @@ The work I care most about is leading products that have a real impact — spott
 
 - [About](https://herradi.com/): Who I am and what I work on.
 - [Experience](https://herradi.com/experience): Roles at Oracle, Nuitee, Bell, and SQLi, plus education.
+- [Resume](https://herradi.com/resume): Full experience, education, and skills on one page — downloadable as a PDF.
 - [Contact](https://herradi.com/contact): Email, phone, GitHub, LinkedIn.
 
 ## Experience
@@ -25,7 +26,7 @@ The work I care most about is leading products that have a real impact — spott
 
 ## Skills
 
-Frontend engineering, Vue.js, React, TypeScript, Next.js, Node.js, web performance, accessibility, team leadership.
+Frontend engineering, Vue.js, React, Oracle APEX, TypeScript, Next.js, Node.js, Adobe Experience Manager, Figma, Git, Jira, web performance, accessibility, team leadership.
 
 ## Contact
 
