@@ -113,12 +113,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="overflow-x-hidden touch-manipulation">
       <head>
-        <link
-          rel="alternate"
-          type="application/rss+xml"
-          title="Reda Herradi — Journal"
-          href="https://herradi.com/feed.xml"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
