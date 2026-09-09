@@ -9,7 +9,6 @@ const items = [
   { name: "Experience", href: "/experience" },
   { name: "Resume", href: "/resume" },
   { name: "Contact", href: "/contact" },
-  { name: "Stats", href: "/stats" },
 ];
 
 export function SidebarNav() {

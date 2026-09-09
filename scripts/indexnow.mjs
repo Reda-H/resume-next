@@ -6,7 +6,6 @@ const URLS = [
   `https://${HOST}/`,
   `https://${HOST}/experience`,
   `https://${HOST}/contact`,
-  `https://${HOST}/stats`,
   `https://${HOST}/llms.txt`,
 ];
 
