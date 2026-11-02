@@ -32,7 +32,7 @@ export const profile = {
   linkedin: "linkedin.com/in/reda-herradi",
   linkedinUrl: "https://www.linkedin.com/in/reda-herradi/",
   summary:
-    "Senior software engineer at Oracle, leading a team on Oracle Payment System — the platform multi-billion-dollar companies use to manage payments with their customers. Previously led end-to-end frontend delivery of Datastudio, a financial analysis tool built on React/Preact and Nx. Six years across fintech, travel, and telecom, taking frontend systems from architecture to production.",
+    "Senior software engineer at Oracle, leading a team on Oracle Payment System — the payments platform multi-billion-dollar companies use to manage payments with their customers. Previously led end-to-end frontend delivery of Datastudio, a financial analysis tool built on React/Preact and Nx. Six years across fintech, travel, and telecom.",
 };
 
 // Small helper so bullet data reads cleanly below.
@@ -54,7 +54,7 @@ export const experience: Entry[] = [
         ),
         b("React.js/Preact and Nx,"),
         s(
-          " working and developing on a monolith architecture, driving end-to-end delivery from architecture to production."
+          " driving end-to-end delivery from architecture to production."
         ),
       ],
       [
@@ -101,16 +101,6 @@ export const experience: Entry[] = [
           "Orchestrated a major overhaul of the B2C interface, resulting in increased client satisfaction and a notable rise in successful sales by more than 120%."
         ),
       ],
-      [
-        s(
-          "Implemented best practices, elevating code quality, performance, and architecture across the entire frontend codebase."
-        ),
-      ],
-      [
-        s(
-          "Extended into Node.js and SQL, shipping backend changes alongside the Vue.js frontend."
-        ),
-      ],
     ],
   },
   {
@@ -137,11 +127,6 @@ export const experience: Entry[] = [
       [
         s(
           "Worked directly with designers, backend developers, and stakeholders to take features from spec to production."
-        ),
-      ],
-      [
-        s(
-          "Reviewed code across interconnected projects, holding a consistent quality bar across teams."
         ),
       ],
     ],
@@ -176,11 +161,6 @@ export const experience: Entry[] = [
           "Built and optimized various frontend components including dynamic cards, interactive sliders, and customizable banners."
         ),
       ],
-      [
-        s(
-          "Conducted code reviews for TypeScript-based projects, contributing to code quality and best practices."
-        ),
-      ],
     ],
   },
   {
@@ -191,25 +171,19 @@ export const experience: Entry[] = [
     bullets: [
       [
         s(
-          "Developed the main features of the COSMiC backend system, including all CRUD requests, authentication, user management, user creation and astrological pattern calculations based on a physics based model of planetary movement using "
+          "Built the main COSMiC backend features — CRUD, authentication, user management, and astrological calculations from a physics-based planetary model — in "
         ),
         b("Python"),
-        s(" for backend and "),
+        s(" and Django, with a "),
         b("React Native"),
-        s(" for frontend."),
+        s(" frontend."),
       ],
       [
-        s(
-          "Implemented user matching behaviour based on astrological patterns using "
-        ),
-        b("Django."),
-      ],
-      [
-        s(
-          "Worked closely with the client and Y Combinator to help with developing the MVP and design tokens for future development using "
-        ),
+        s("Worked directly with the client and "),
+        b("Y Combinator"),
+        s(" on the MVP and "),
         b("Figma"),
-        s("."),
+        s(" design tokens for future development."),
       ],
     ],
   },

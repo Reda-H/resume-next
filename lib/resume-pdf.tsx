@@ -9,6 +9,7 @@ import {
   View,
   Link,
   StyleSheet,
+  Font,
 } from "@react-pdf/renderer";
 import {
   profile,
@@ -21,17 +22,22 @@ import {
 
 const BLUE = "#0563c1";
 
+// react-pdf hyphenates by default, which breaks tokens like "React.js/Preact"
+// into "Re-act.js/Preact" — unreadable, and no ATS keyword matches it. Return
+// each word whole and let lines wrap at spaces instead.
+Font.registerHyphenationCallback((word) => [word]);
+
 const styles = StyleSheet.create({
   page: {
-    paddingVertical: 40,
+    paddingVertical: 36,
     paddingHorizontal: 54,
     fontFamily: "Times-Roman",
-    fontSize: 10.5,
-    lineHeight: 1.35,
+    fontSize: 10,
+    lineHeight: 1.1,
     color: "#000000",
   },
-  name: { fontFamily: "Times-Bold", fontSize: 22, textAlign: "center" },
-  rule: { borderBottomWidth: 1, borderBottomColor: "#000000", marginVertical: 6 },
+  name: { fontFamily: "Times-Bold", fontSize: 20, textAlign: "center" },
+  rule: { borderBottomWidth: 1, borderBottomColor: "#000000", marginVertical: 4 },
   contactLine: { textAlign: "center", lineHeight: 1.5 },
   link: { color: BLUE, textDecoration: "underline" },
   summary: { fontFamily: "Times-Italic", textAlign: "center" },
@@ -42,15 +48,15 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: "#000000",
     paddingBottom: 2,
-    marginTop: 14,
+    marginTop: 10,
     marginBottom: 4,
   },
-  entryHead: { marginTop: 10 },
+  entryHead: { marginTop: 6 },
   row: { flexDirection: "row", justifyContent: "space-between" },
   org: { fontFamily: "Times-Bold", textTransform: "uppercase" },
   location: { fontFamily: "Times-Bold" },
   dates: { fontFamily: "Times-Italic" },
-  bulletRow: { flexDirection: "row", marginTop: 3, paddingLeft: 12 },
+  bulletRow: { flexDirection: "row", marginTop: 2, paddingLeft: 12 },
   bulletDot: {
     width: 3,
     height: 3,
@@ -60,7 +66,7 @@ const styles = StyleSheet.create({
     marginRight: 6,
   },
   bulletText: { flex: 1 },
-  skillLine: { marginTop: 3 },
+  skillLine: { marginTop: 2 },
   bold: { fontFamily: "Times-Bold" },
 });
 
@@ -150,7 +156,7 @@ export function ResumeDocument() {
           <EntryBlock key={entry.org} entry={entry} />
         ))}
 
-        <View style={styles.rule} />
+        <Text style={styles.sectionTitle}>Education</Text>
         <EntryBlock entry={education} />
 
         <Text style={styles.sectionTitle}>Skills</Text>
