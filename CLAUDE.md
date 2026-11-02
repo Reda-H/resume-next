@@ -106,3 +106,17 @@ middleware needs a server runtime — this stays true even though every page is 
 static. Vercel KV env vars are auto-injected on deploy via the marketplace
 integration. To run the tracking pipeline locally, copy the same `KV_REST_API_*`
 vars into `.env.local`.
+
+## Agent skills
+
+### Issue tracker
+
+Issues live in GitHub Issues at `Reda-H/resume-next`, driven by the `gh` CLI. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+The five canonical triage roles map 1:1 to `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context: one `GLOSSARY.md` + `docs/adr/` at the repo root. See `docs/agents/domain.md`.
