@@ -29,7 +29,7 @@ Font.registerHyphenationCallback((word) => [word]);
 
 const styles = StyleSheet.create({
   page: {
-    paddingVertical: 36,
+    paddingVertical: 30,
     paddingHorizontal: 54,
     fontFamily: "Times-Roman",
     fontSize: 10,
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     color: "#000000",
   },
   name: { fontFamily: "Times-Bold", fontSize: 20, textAlign: "center" },
-  rule: { borderBottomWidth: 1, borderBottomColor: "#000000", marginVertical: 4 },
+  rule: { borderBottomWidth: 1, borderBottomColor: "#000000", marginVertical: 3 },
   contactLine: { textAlign: "center", lineHeight: 1.5 },
   link: { color: BLUE, textDecoration: "underline" },
   summary: { fontFamily: "Times-Italic", textAlign: "center" },
@@ -48,32 +48,27 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: "#000000",
     paddingBottom: 2,
-    marginTop: 10,
+    marginTop: 7,
     marginBottom: 4,
   },
-  entryHead: { marginTop: 6 },
+  entryHead: { marginTop: 4 },
   row: { flexDirection: "row", justifyContent: "space-between" },
   org: { fontFamily: "Times-Bold", textTransform: "uppercase" },
   location: { fontFamily: "Times-Bold" },
   dates: { fontFamily: "Times-Italic" },
-  bulletRow: { flexDirection: "row", marginTop: 2, paddingLeft: 12 },
-  bulletDot: {
-    width: 3,
-    height: 3,
-    borderRadius: 1.5,
-    backgroundColor: "#000000",
-    marginTop: 4.5,
-    marginRight: 6,
-  },
+  bulletRow: { flexDirection: "row", marginTop: 1, paddingLeft: 12 },
+  // A real bullet glyph rather than a drawn dot: ATS parsers segment
+  // achievements on bullet characters, and a vector square extracts as nothing.
+  bulletDot: { width: 7, marginRight: 4 },
   bulletText: { flex: 1 },
-  skillLine: { marginTop: 2 },
+  skillLine: { marginTop: 1 },
   bold: { fontFamily: "Times-Bold" },
 });
 
 function BulletItem({ bullet }: { bullet: Bullet }) {
   return (
     <View style={styles.bulletRow}>
-      <View style={styles.bulletDot} />
+      <Text style={styles.bulletDot}>•</Text>
       <Text style={styles.bulletText}>
         {bullet.map((seg, i) =>
           seg.bold ? (
@@ -145,6 +140,8 @@ export function ResumeDocument() {
           <Link style={styles.link} src={profile.linkedinUrl}>
             {profile.linkedin}
           </Link>
+          {"  ·  "}
+          {profile.location}
         </Text>
 
         <View style={styles.rule} />

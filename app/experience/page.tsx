@@ -160,12 +160,20 @@ export default function Experience() {
         Bell and Bell Media, in Vue.js, Adobe Experience Manager, and Java.
         Most of my time went into the reusable UI layer — cards, sliders,
         banners, the usual — plus the user tracking, third-party integrations,
-        and data aggregation behind the scenes.
+        and data aggregation behind the scenes, and plenty of REST API wiring.
+      </p>
+      <p className="mt-4">
+        Testing and delivery were part of the job too: Jest and React Testing
+        Library for unit coverage, Cypress for end-to-end flows, all wired into
+        CI/CD pipelines so releases were repeatable rather than heroic.
+        Accessibility and responsive behaviour were part of the definition of
+        done, not a cleanup pass.
       </p>
       <p className="mt-4">
         The team was the cross-functional kind: designers, backend developers,
-        and project stakeholders all in the same loop. I did a lot of code
-        review and helped onboard new engineers alongside the feature work.
+        and project stakeholders all in the same loop, working in Agile sprints.
+        I did a lot of code review and helped onboard new engineers alongside
+        the feature work.
       </p>
 
       <h2 className="font-semibold mt-10 mb-3 text-foreground">

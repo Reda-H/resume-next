@@ -31,8 +31,9 @@ export const profile = {
   githubUrl: "https://github.com/Reda-H",
   linkedin: "linkedin.com/in/reda-herradi",
   linkedinUrl: "https://www.linkedin.com/in/reda-herradi/",
+  location: "Casablanca, Morocco",
   summary:
-    "Senior software engineer at Oracle, leading a team on Oracle Payment System — the payments platform multi-billion-dollar companies use to manage payments with their customers. Previously led end-to-end frontend delivery of Datastudio, a financial analysis tool built on React/Preact and Nx. Six years across fintech, travel, and telecom.",
+    "Senior software engineer at Oracle, leading a team on Oracle Payment System — the platform multi-billion-dollar companies use to manage customer payments. Previously led end-to-end frontend delivery of Datastudio, a financial analysis tool built on React/Preact and Nx. Six years across fintech, travel, and telecom, building responsive interfaces in TypeScript and Vue.js.",
 };
 
 // Small helper so bullet data reads cleanly below.
@@ -44,7 +45,7 @@ export const experience: Entry[] = [
     org: "Oracle",
     location: "Casablanca, Morocco",
     title: "Senior Software Engineer",
-    dates: "Feb 2025–Present",
+    dates: "Feb 2025 - Present",
     bullets: [
       [
         s("Led frontend development of the "),
@@ -82,7 +83,7 @@ export const experience: Entry[] = [
     org: "Nuitee",
     location: "Casablanca, Morocco",
     title: "Frontend Lead",
-    dates: "Feb 2024–Dec 2024",
+    dates: "Feb 2024 - Dec 2024",
     bullets: [
       [
         s("Led a team of three frontend developers on "),
@@ -98,7 +99,7 @@ export const experience: Entry[] = [
       ],
       [
         s(
-          "Orchestrated a major overhaul of the B2C interface, resulting in increased client satisfaction and a notable rise in successful sales by more than 120%."
+          "Orchestrated a major overhaul of the B2C interface, improving performance and client satisfaction, and driving successful sales up by more than 120%."
         ),
       ],
     ],
@@ -107,27 +108,33 @@ export const experience: Entry[] = [
     org: "Bell",
     location: "Morocco",
     title: "Software Engineer",
-    dates: "Dec 2022–Jan 2024",
+    dates: "Dec 2022 - Jan 2024",
     bullets: [
       [
         s("Contributed to multiple web-based projects for "),
         b("Bell/Bell Media"),
-        s(" using Vue.js, Adobe Experience Manager, and Java."),
+        s(
+          " using Vue.js, Adobe Experience Manager, and Java, integrating "
+        ),
+        b("REST APIs"),
+        s(" and third-party services."),
+      ],
+      [
+        s("Built and maintained test suites in "),
+        b("Jest, React Testing Library, and Cypress"),
+        s(", wired into "),
+        b("CI/CD"),
+        s(" pipelines for reliable releases."),
       ],
       [
         s(
-          "Developed key features including user tracking, third-party integrations, and data aggregation, enhancing platform functionality."
+          "Created reusable, responsive UI components — cards, sliders, and banners — with accessibility and design consistency across Bell's web projects."
         ),
       ],
       [
-        s(
-          "Created reusable UI components — cards, sliders, and banners — keeping design consistent across Bell's interconnected web projects."
-        ),
-      ],
-      [
-        s(
-          "Worked directly with designers, backend developers, and stakeholders to take features from spec to production."
-        ),
+        s("Implemented user tracking and data aggregation, working with designers, backend developers, and stakeholders in "),
+        b("Agile"),
+        s(" sprints."),
       ],
     ],
   },
@@ -135,7 +142,7 @@ export const experience: Entry[] = [
     org: "SQLi",
     location: "Rabat, Morocco",
     title: "Frontend Engineer",
-    dates: "Jul 2021–Nov 2022",
+    dates: "Jul 2021 - Nov 2022",
     bullets: [
       [
         s("Developed frontend solutions for major clients including "),
@@ -161,13 +168,18 @@ export const experience: Entry[] = [
           "Built and optimized various frontend components including dynamic cards, interactive sliders, and customizable banners."
         ),
       ],
+      [
+        s(
+          "Conducted code reviews for TypeScript projects, holding a consistent quality bar across the team."
+        ),
+      ],
     ],
   },
   {
     org: "COSMiC",
     location: "Rabat, Morocco",
     title: "Full-Stack Developer (Freelance)",
-    dates: "Jul 2020–Jul 2021",
+    dates: "Jul 2020 - Jul 2021",
     bullets: [
       [
         s(
@@ -199,7 +211,7 @@ export const education: Entry = {
 export const skills: SkillGroup[] = [
   {
     label: "Languages",
-    items: "TypeScript, JavaScript, Python, Java, SQL",
+    items: "TypeScript, JavaScript, HTML, CSS, Python, Java, SQL",
   },
   {
     label: "Frameworks & Libraries",
@@ -208,11 +220,12 @@ export const skills: SkillGroup[] = [
   },
   {
     label: "Tools & Platforms",
-    items: "Nx, Git, Figma, Jira, Adobe Experience Manager",
+    items:
+      "Nx, Git, Jest, React Testing Library, Cypress, GitHub Actions, Figma, Jira, Adobe Experience Manager",
   },
   {
-    label: "Leadership",
+    label: "Practices",
     items:
-      "Team leadership, technical direction, cross-team coordination, mentoring, stakeholder communication",
+      "Team leadership, technical direction, mentoring, stakeholder communication, responsive design, Agile/Scrum",
   },
 ];

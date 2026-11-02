@@ -25,7 +25,7 @@ export function useResumeDownload() {
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
-      link.download = "Reda-Herradi-Resume.pdf";
+      link.download = "Reda_Herradi_Resume.pdf";
       document.body.appendChild(link);
       link.click();
       link.remove();
