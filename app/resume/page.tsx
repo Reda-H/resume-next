@@ -98,7 +98,7 @@ const resumeJsonLd = {
     {
       "@type": "OrganizationRole",
       "@id": "https://herradi.com/resume#cosmic",
-      "roleName": "Freelance Fullstack App Developer",
+      "roleName": "Full-Stack Developer (Freelance)",
       "startDate": "2020-07",
       "endDate": "2021-07",
       "member": { "@id": PERSON_ID },
@@ -182,7 +182,7 @@ export default function Resume() {
 
       <p className="mt-5 text-[13px] text-foreground/70">
         <a className="prose-link" href={`tel:${profile.phone}`}>
-          {profile.phone}
+          {profile.phoneDisplay}
         </a>
         <span className="mx-2 text-border">·</span>
         <a className="prose-link" href={`mailto:${profile.email}`}>
@@ -196,6 +196,24 @@ export default function Resume() {
           rel="noopener noreferrer"
         >
           {profile.site}
+        </a>
+        <span className="mx-2 text-border">·</span>
+        <a
+          className="prose-link"
+          href={profile.githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {profile.github}
+        </a>
+        <span className="mx-2 text-border">·</span>
+        <a
+          className="prose-link"
+          href={profile.linkedinUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {profile.linkedin}
         </a>
       </p>
 
@@ -211,9 +229,12 @@ export default function Resume() {
 
       <h2 className="font-semibold mt-12 mb-2 text-foreground">Skills</h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 marker:text-primary/70">
-        {skills.map((bullet, i) => (
-          <li key={i}>
-            <Segments bullet={bullet} />
+        {skills.map((group) => (
+          <li key={group.label}>
+            <strong className="font-semibold text-foreground">
+              {group.label}:
+            </strong>{" "}
+            {group.items}
           </li>
         ))}
       </ul>

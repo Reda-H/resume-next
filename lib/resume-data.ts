@@ -15,14 +15,24 @@ export type Entry = {
   bullets?: Bullet[];
 };
 
+// A skills row: a category label plus a comma-separated list. Kept as data
+// rather than pre-joined strings so the page and the PDF can style the label.
+export type SkillGroup = { label: string; items: string };
+
 export const profile = {
   name: "Reda Herradi",
   phone: "+212697444476",
+  // Display form for the phone: the raw string above is what `tel:` needs.
+  phoneDisplay: "+212 697 444 476",
   email: "herradi.r@gmail.com",
   site: "herradi.com",
   siteUrl: "https://herradi.com",
+  github: "github.com/Reda-H",
+  githubUrl: "https://github.com/Reda-H",
+  linkedin: "linkedin.com/in/reda-herradi",
+  linkedinUrl: "https://www.linkedin.com/in/reda-herradi/",
   summary:
-    "Senior Software Engineer with 6+ years of experience, specializing in Vue.js, React.js, Oracle APEX, and modern JavaScript. Currently leading a team at Oracle, delivering large-scale enterprise applications across financial and payment systems. Proven track record of driving adoption of best practices, mentoring engineers, and shipping high-quality web applications. Consistently growing in scope and leadership responsibility, seeking opportunities to leverage deep technical expertise in an innovative environment.",
+    "Senior software engineer at Oracle, leading a team on Oracle Payment System — the platform multi-billion-dollar companies use to manage payments with their customers. Previously led end-to-end frontend delivery of Datastudio, a financial analysis tool built on React/Preact and Nx. Six years across fintech, travel, and telecom, taking frontend systems from architecture to production.",
 };
 
 // Small helper so bullet data reads cleanly below.
@@ -49,18 +59,21 @@ export const experience: Entry[] = [
       ],
       [
         s("Transitioned to the "),
-        b("Oracle Payment Systems"),
+        b("Oracle Payment System"),
         s(" project, a large-scale multi-team initiative built on "),
         b("Oracle APEX"),
         s("."),
       ],
       [
         s(
-          "Completed a structured leadership training programme over three months and now leads a team within Oracle Payment Systems and is enrolled in "
+          "Completed a three-month leadership programme; now leading a team within Oracle Payment System, coordinating cross-team delivery and technical direction."
         ),
+      ],
+      [
+        s("Enrolled in "),
         b("IAAP,"),
         s(
-          " an architecture and project approval program, coordinating cross-team delivery and technical direction."
+          " Oracle's architecture and project-approval programme, reviewing incoming projects alongside C-suite and directors."
         ),
       ],
     ],
@@ -69,13 +82,13 @@ export const experience: Entry[] = [
     org: "Nuitee",
     location: "Casablanca, Morocco",
     title: "Frontend Lead",
-    dates: "Feb 2024–December 2024",
+    dates: "Feb 2024–Dec 2024",
     bullets: [
       [
-        s("Lead a team of 3 frontend developers for the "),
+        s("Led a team of three frontend developers on "),
         b("WhiteLabel"),
         s(
-          " project, a highly customizable travel website generator for partners."
+          ", a highly customizable travel-site generator for Nuitee's partners."
         ),
       ],
       [
@@ -95,7 +108,7 @@ export const experience: Entry[] = [
       ],
       [
         s(
-          "Utilized Vue.js for frontend development, while expanding skills in Node.js backend and SQL database management."
+          "Extended into Node.js and SQL, shipping backend changes alongside the Vue.js frontend."
         ),
       ],
     ],
@@ -118,17 +131,17 @@ export const experience: Entry[] = [
       ],
       [
         s(
-          "Created reusable UI components such as cards, sliders, and banners, improving consistency across projects - Collaborated effectively with cross-functional teams including designers, backend developers, and project stakeholders."
+          "Created reusable UI components — cards, sliders, and banners — keeping design consistent across Bell's interconnected web projects."
         ),
       ],
       [
         s(
-          "Participated in regular code reviews, helping maintain high code quality standards across interconnected projects."
+          "Worked directly with designers, backend developers, and stakeholders to take features from spec to production."
         ),
       ],
       [
         s(
-          "Assisted onboarding new team members, providing technical support and guidance."
+          "Reviewed code across interconnected projects, holding a consistent quality bar across teams."
         ),
       ],
     ],
@@ -137,7 +150,7 @@ export const experience: Entry[] = [
     org: "SQLi",
     location: "Rabat, Morocco",
     title: "Frontend Engineer",
-    dates: "July 2021–November 2022",
+    dates: "Jul 2021–Nov 2022",
     bullets: [
       [
         s("Developed frontend solutions for major clients including "),
@@ -168,18 +181,13 @@ export const experience: Entry[] = [
           "Conducted code reviews for TypeScript-based projects, contributing to code quality and best practices."
         ),
       ],
-      [
-        s(
-          "Gained valuable experience in project planning and task management, supporting team efficiency."
-        ),
-      ],
     ],
   },
   {
     org: "COSMiC",
     location: "Rabat, Morocco",
-    title: "Freelance Fullstack App Developer",
-    dates: "July 2020–July 2021",
+    title: "Full-Stack Developer (Freelance)",
+    dates: "Jul 2020–Jul 2021",
     bullets: [
       [
         s(
@@ -214,15 +222,23 @@ export const education: Entry = {
   dates: "May 2020",
 };
 
-export const skills: Bullet[] = [
-  [
-    s(
-      "Proficient in VueJs, React.js, Oracle APEX, modern Javascript, Typescript, NodeJs, AEM, Git, Figma, Jira."
-    ),
-  ],
-  [
-    s(
-      "Strong leadership skills with experience managing and coordinating multiple engineering teams; effective communicator with clients and cross-functional stakeholders."
-    ),
-  ],
+export const skills: SkillGroup[] = [
+  {
+    label: "Languages",
+    items: "TypeScript, JavaScript, Python, Java, SQL",
+  },
+  {
+    label: "Frameworks & Libraries",
+    items:
+      "React, Preact, Vue.js, NuxtJS, Next.js, React Native, Node.js, Django, FastAPI, Oracle APEX",
+  },
+  {
+    label: "Tools & Platforms",
+    items: "Nx, Git, Figma, Jira, Adobe Experience Manager",
+  },
+  {
+    label: "Leadership",
+    items:
+      "Team leadership, technical direction, cross-team coordination, mentoring, stakeholder communication",
+  },
 ];

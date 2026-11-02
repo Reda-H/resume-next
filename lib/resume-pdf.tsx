@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
     marginRight: 6,
   },
   bulletText: { flex: 1 },
+  skillLine: { marginTop: 3 },
   bold: { fontFamily: "Times-Bold" },
 });
 
@@ -119,17 +120,24 @@ export function ResumeDocument() {
 
         <Text style={styles.contactLine}>
           <Link style={styles.link} src={`tel:${profile.phone}`}>
-            {profile.phone}
+            {profile.phoneDisplay}
           </Link>
-        </Text>
-        <Text style={styles.contactLine}>
+          {"  ·  "}
           <Link style={styles.link} src={`mailto:${profile.email}`}>
             {profile.email}
           </Link>
-        </Text>
-        <Text style={styles.contactLine}>
+          {"  ·  "}
           <Link style={styles.link} src={profile.siteUrl}>
             {profile.site}
+          </Link>
+        </Text>
+        <Text style={styles.contactLine}>
+          <Link style={styles.link} src={profile.githubUrl}>
+            {profile.github}
+          </Link>
+          {"  ·  "}
+          <Link style={styles.link} src={profile.linkedinUrl}>
+            {profile.linkedin}
           </Link>
         </Text>
 
@@ -145,9 +153,12 @@ export function ResumeDocument() {
         <View style={styles.rule} />
         <EntryBlock entry={education} />
 
-        <Text style={styles.sectionTitle}>Additional Skills</Text>
-        {skills.map((bullet, i) => (
-          <BulletItem key={i} bullet={bullet} />
+        <Text style={styles.sectionTitle}>Skills</Text>
+        {skills.map((group) => (
+          <Text key={group.label} style={styles.skillLine}>
+            <Text style={styles.bold}>{group.label}: </Text>
+            {group.items}
+          </Text>
         ))}
       </Page>
     </Document>
