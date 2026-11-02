@@ -5,7 +5,11 @@ const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 const URLS = [
   `https://${HOST}/`,
   `https://${HOST}/experience`,
+  `https://${HOST}/resume`,
   `https://${HOST}/contact`,
+  `https://${HOST}/journal`,
+  `https://${HOST}/journal/the-reconciler-was-the-point`,
+  `https://${HOST}/journal/meets-me-where-i-am`,
   `https://${HOST}/llms.txt`,
 ];
 

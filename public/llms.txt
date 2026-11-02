@@ -11,7 +11,13 @@ The work I care most about is leading products that have a real impact — spott
 - [About](https://herradi.com/): Who I am and what I work on.
 - [Experience](https://herradi.com/experience): Roles at Oracle, Nuitee, Bell, and SQLi, plus education.
 - [Resume](https://herradi.com/resume): Full experience, education, and skills on one page — downloadable as a PDF.
+- [Journal](https://herradi.com/journal): Notes on building software, design choices, and what works.
 - [Contact](https://herradi.com/contact): Email, phone, GitHub, LinkedIn.
+
+## Journal
+
+- [The reconciler was the point](https://herradi.com/journal/the-reconciler-was-the-point) (2026-07-27): Notes on building a multi-agent travel planner — why an orchestrator beat independent agents, and how a second LLM call caught drift the first missed.
+- [Building an app that meets me where I am](https://herradi.com/journal/meets-me-where-i-am) (2026-05-15): Notes on a personal assistant app — multimodal input, single-modal output, minimal context per call, and an offline-first sync layer.
 
 ## Experience
 

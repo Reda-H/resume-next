@@ -8,6 +8,7 @@ const items = [
   { name: "About", href: "/" },
   { name: "Experience", href: "/experience" },
   { name: "Resume", href: "/resume" },
+  { name: "Journal", href: "/journal" },
   { name: "Contact", href: "/contact" },
 ];
 

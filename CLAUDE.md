@@ -26,7 +26,10 @@ database, no API routes.
 - `app/experience/page.tsx` — Roles + education, written as narrative prose. `OrganizationRole` JSON-LD per role.
 - `app/resume/page.tsx` — Formal one-page resume rendered from `lib/resume-data.ts`, with a PDF download button. `ProfilePage` + `OrganizationRole` + `EducationalOccupationalCredential` JSON-LD.
 - `app/contact/page.tsx` — Email, phone, GitHub, LinkedIn.
-- `app/layout.tsx` — Root metadata (OG, Twitter, robots, icons, Bing verification), site-wide `Person` + `WebSite` JSON-LD, the inline `<filter id="grain">` SVG used by view transitions, the sidebar shell, and `<Analytics />`.
+- `app/journal/page.tsx` — Journal index, lists `posts` from `lib/journal.ts`. `Blog` JSON-LD.
+- `app/journal/[slug]/page.tsx` — Post page. `generateStaticParams` + `dynamicParams = false`, so only registry slugs exist. `BlogPosting` JSON-LD.
+- `app/feed.xml/route.ts` — RSS 2.0 feed built from `lib/journal.ts` in a `GET` handler, forced static.
+- `app/layout.tsx` — Root metadata (OG, Twitter, robots, icons, Bing verification), site-wide `Person` + `WebSite` JSON-LD, the inline `<filter id="grain">` SVG used by view transitions, the sidebar shell, the `<link rel="alternate">` RSS discovery tag, and `<Analytics />`.
 - `app/sitemap.ts`, `app/robots.ts`, `app/not-found.tsx`, `app/opengraph-image.png`.
 
 Every route prerenders to static HTML. There are no server-rendered pages —
@@ -52,7 +55,7 @@ Generation is entirely client-side — there is no PDF endpoint.
 
 **Components (four):**
 
-- `components/sidebar-nav.tsx` — Sticky lowercase nav: About / Experience / Resume / Contact, plus the download control. Active item gets a dotted underline.
+- `components/sidebar-nav.tsx` — Sticky lowercase nav: About / Experience / Resume / Journal / Contact, plus the download control. Active item gets a dotted underline.
 - `components/transition-link.tsx` — Wraps `next/link`. If `document.startViewTransition` exists, intercepts the click and routes inside it. Bails out on modified clicks and on `http`/`mailto`/`tel` hrefs. Otherwise falls back to plain client navigation.
 - `components/download-resume.tsx`, `components/use-resume-download.tsx` — see above.
 
@@ -68,22 +71,24 @@ counters keep incrementing in Redis and can be read from the Upstash console.
 - `lib/ua-classify.ts` has a hand-curated `MATCHERS` list of known AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, etc.) and search/social bots (Googlebot, Bingbot, facebookexternalhit, etc.), plus a generic regex fallback for unknown bots. Anything that doesn't match is `human`. Order matters — `Applebot-Extended` (ai) must be tested before `Applebot` (bot), which the latter's negative lookahead also guards.
 - `@vercel/analytics` is mounted in the layout for client-side human analytics (cookieless).
 
-**Dormant code — present but unreachable:**
+**Journal:**
 
-The journal was removed as a set of routes but kept as content. `content/journal/*.tsx`
-(two posts) and `lib/journal.ts` (the registry) are still here and still compile,
-but nothing imports them. Restoring means re-adding `app/journal/page.tsx`,
-`app/journal/[slug]/page.tsx`, and the RSS route — see git history at `75ab742`.
-The RSS route (`app/feed.xml/route.ts`) was never committed, so it is *not*
-recoverable from git.
+Posts live as modules, not MDX. `content/journal/<slug>.tsx` exports a `meta`
+object (`slug`, `title`, `date` as `YYYY-MM-DD`, `description`, optional
+`keywords`) and a default `Body` component. `lib/journal.ts` imports each one and
+exposes `posts` (newest first) and `getPost(slug)`.
 
-Don't "clean up" these files as dead code — they're deliberately parked.
+To add a post: create the content module, import it in `lib/journal.ts`, and
+prepend it to `posts`. The index, the post route, the sitemap, and the RSS feed
+all read from that one array — nothing else needs touching. `scripts/indexnow.mjs`
+is plain `.mjs` and can't import the registry, so its URL list is hand-maintained;
+add new post URLs there.
 
 **SEO / indexing surface:**
 
-- `app/sitemap.ts` — four URLs. Keep in sync when routes change.
-- `public/llms.txt` — hand-written summary for LLM crawlers. Its Pages section lists the same four routes; update it alongside the sitemap.
-- `scripts/indexnow.mjs` — hardcoded URL list submitted to IndexNow. **Also needs updating when routes change**, or it advertises 404s. Note it currently omits `/resume`.
+- `app/sitemap.ts` — seven URLs: the four static pages plus `/journal` and one per post, derived from `lib/journal.ts`.
+- `public/llms.txt` — hand-written summary for LLM crawlers. Its Pages section lists every route and its Journal section lists each post; update it alongside the sitemap.
+- `scripts/indexnow.mjs` — hardcoded URL list submitted to IndexNow. **Also needs updating when routes change**, including new posts, or it advertises 404s.
 - `public/google20e8e931a366f50c.html` and `public/e84d29ab5d3d586e6421127cec720aff.txt` are search-engine verification files. Don't touch.
 - Bing verification lives in `app/layout.tsx` metadata (`msvalidate.01`).
 
